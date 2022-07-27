@@ -1,0 +1,32 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Survivor's Message For US :)</h4>
+                <p class="card-category">Hear Survivor's Story to fight against Cancer...</p>
+            </div>
+            <div class="card-body" *ngFor="let item of videos.items">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="card card-chart">
+                            <div class="card-header card-header-success">
+                                <h4 class="card-title">{{item.snippet.title}}</h4>
+                                <p class="card-category">{{item.snippet.description}}</p>
+                            </div>
+                            <div class="card-body">
+                                <youtube-player
+                                        videoId="{{item.id.videoId}}">
+                                </youtube-player>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">access_time</i> {{item.snippet.channelTitle +" - "+ item.snippet.publishedAt}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
